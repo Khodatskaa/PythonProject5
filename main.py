@@ -1,12 +1,19 @@
-def find_min_of_four(a, b, c, d, e):
-    min_value = min(a, b, c, d, e)
-    return min_value
+def display_square(side_length, fill_char, is_filled):
+    if is_filled:
+        for _ in range(side_length):
+            print(fill_char * side_length)
+    else:
+        print(fill_char * side_length)
 
-num1 = int(input('Enter first number: '))
-num2 = int(input('Enter second number: '))
-num3 = int(input('Enter third number: '))
-num4 = int(input('Enter fourth number: '))
-num5 = int(input('Enter fifth number: '))
+        for _ in range(side_length - 2):
+            print(fill_char + " " * (side_length - 2) + fill_char)
 
-result = find_min_of_four(num1, num2, num3, num4, num5)
-print(f"The minimal number is {result}")
+        print(fill_char * side_length)
+
+side_length = int(input('Enter number: '))
+fill_char = input('Enter symbol: ')
+is_filled = input('Choose true or false: ')
+
+is_filled = is_filled.lower() == 'true'
+
+display_square(side_length, fill_char, is_filled)
